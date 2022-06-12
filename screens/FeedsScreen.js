@@ -5,6 +5,8 @@ import FloatingWriteButton from '../components/FloatingWriteButton';
 
 function FeedsScreen() {
   const {text, setText} = useContext(LogContext);
+  const {logs} = useContext(LogContext);
+  console.log(JSON.stringify(logs, null, 2));
   return (
     // ** context API 사용
 
