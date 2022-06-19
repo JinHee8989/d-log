@@ -9,13 +9,14 @@ import LogContext from '../contexts/LogContext';
 function WriteScreen() {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
+
   const navigation = useNavigation();
   const {onCreate} = useContext(LogContext);
   const onSave = () => {
     onCreate({
       title,
       body,
-      date: new Date().toISOString, //날짜를 문자열로 변환
+      date: new Date().toISOString(), //날짜를 문자열로 변환
     });
     navigation.pop();
   };

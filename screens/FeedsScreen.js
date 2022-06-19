@@ -2,11 +2,11 @@ import React, {useContext} from 'react';
 import {StyleSheet, View, TextInput} from 'react-native';
 import LogContext from '../contexts/LogContext';
 import FloatingWriteButton from '../components/FloatingWriteButton';
+import FeedList from '../components/FeedList';
 
 function FeedsScreen() {
-  const {text, setText} = useContext(LogContext);
+  // const {text, setText} = useContext(LogContext);
   const {logs} = useContext(LogContext);
-  console.log(JSON.stringify(logs, null, 2));
   return (
     // ** context API 사용
 
@@ -38,6 +38,7 @@ function FeedsScreen() {
     // </View>
 
     <View style={styles.block}>
+      <FeedList logs={logs} />
       <FloatingWriteButton />
     </View>
   );
